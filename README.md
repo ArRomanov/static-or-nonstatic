@@ -114,13 +114,14 @@ class Employee {
     private String name;
     private float salary;
     private int childrenCount;
+    private final float CHILDREN_DISCOUNT_PERCENT = 1.1f;
 
     public float calculateBonus(int bonusPercent) {
-        return salary / 100 * percent;
+        return salary / 100 * bonusPercent;
     }
 
     public float calculateChildrenDiscount() {
-        return CHILDREN_DISCOUNT * childrenCount;
+        return CHILDREN_DISCOUNT_PERCENT * childrenCount;
     }
 }
 
@@ -175,7 +176,7 @@ class WorkProcess {
 class Employee {
     private String name;
     // Здесь не нужно использовать static
-    private static int serialNumber;
+    private static String serialNumber;
 
     public Employee(String name) {
         this.name = name;
